@@ -113,6 +113,11 @@ extern unsigned int PWQ_ACTIVE_CPU;
 
 #define _hardware_pause() __asm__("")
 
+/* Fix for Microsoft platform?! */
+#elif defined(__MACHINEX86) || defined(__MACHINEX64) || defined(__MACHINEX86_X64)
+
+#define _hardware_pause() do { __asm{_emit 0xf3}; __asm {_emit 0x90}; } while (0)
+
 #else
 
 #error Need to define _hardware_pause() for this architure

@@ -11,7 +11,8 @@ struct timezone
 };
 
 // quick workaround in case this is included after event.h
-#ifndef _SYS_EVENT_H_
+// !defined(_INC_TIME) fixes type redefinition for Microsoft platforms
+#if !defined(_SYS_EVENT_H_) && !defined(_INC_TIME)
 struct timespec {
     long tv_sec; /* seconds */
     long tv_nsec; /* nanoseconds */

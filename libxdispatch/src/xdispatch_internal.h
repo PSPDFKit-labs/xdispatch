@@ -46,7 +46,7 @@
 
 #include "../include/xdispatch/platform.h"
 
-#if XDISPATCH_COMPILER_MSVC2010 || XDISPATCH_COMPILER_MSVC2008SP1
+#if XDISPATCH_COMPILER_MSVC2015 || XDISPATCH_COMPILER_MSVC2010 || XDISPATCH_COMPILER_MSVC2008SP1
  # pragma warning(disable: 4251) /* disable warning C4251 - * requires dll-interface */
  # define XDISPATCH_EXPORT __declspec( dllexport )
  # define XDISPATCH_DEPRECATED( F ) __declspec( deprecated ) F
